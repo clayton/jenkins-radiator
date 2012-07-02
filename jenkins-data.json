@@ -8,7 +8,7 @@
   "jobs": [{
     "name": "Example Failing Build",
     "url": "http://ci.example.com/job/example-failing-build",
-    "color": "blue"
+    "color": "red"
   }, {
     "name": "Failing Build That's Building",
     "url": "http://ci.example.com/job/failing-build-thats-building",
