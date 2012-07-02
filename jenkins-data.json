@@ -1,0 +1,21 @@
+{
+  "assignedLabels": [{}],
+  "mode": "EXCLUSIVE",
+  "nodeDescription": "the master Jenkins node",
+  "nodeName": "",
+  "numExecutors": 6,
+  "description": "Jenkins Master",
+  "jobs": [{
+    "name": "Example Failing Build",
+    "url": "http://ci.example.com/job/example-failing-build",
+    "color": "blue"
+  }, {
+    "name": "Failing Build That's Building",
+    "url": "http://ci.example.com/job/failing-build-thats-building",
+    "color": "red"
+  }, {
+    "name": "Passing Build",
+    "url": "http://ci.example.com/job/passing-build",
+    "color": "red_anime"
+  }]
+}
