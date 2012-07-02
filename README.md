@@ -10,3 +10,11 @@ A small backbone.js application that monitors your Jenkins CI build server and d
 ### Optional Configuration
 
 * Edit `config.js` and set the `refresh_interval` to something other than 1 minute
+
+### Screenshots
+
+__Failing Builds__
+![Failing Builds in Jenkins Radiator](https://dl.dropbox.com/u/14820/jenkins-radiator-failing.png)
+
+__Passing Builds__
+![Passing Builds in Jenkins Radiator](https://dl.dropbox.com/u/14820/jenkins-radiator-passing.png)
