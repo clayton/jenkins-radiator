@@ -12,10 +12,10 @@
   }, {
     "name": "Failing Build That's Building",
     "url": "http://ci.example.com/job/failing-build-thats-building",
-    "color": "red"
+    "color": "red_anime"
   }, {
     "name": "Passing Build",
     "url": "http://ci.example.com/job/passing-build",
-    "color": "red_anime"
+    "color": "blue"
   }]
 }
