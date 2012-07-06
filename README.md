@@ -1,6 +1,6 @@
 ## Jenkins CI Radiator
 
-A small backbone.js application that monitors your Jenkins CI build server and displays failing, passing, building and disabled jobs.
+A small backbone.js application that monitors your Jenkins CI build server and displays failing, passing, building and disabled jobs. Audio is played when jobs move from a passing state to a failing state or from a failing state to a passing state.
 
 ### Configuration
 
