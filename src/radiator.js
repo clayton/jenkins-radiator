@@ -80,12 +80,23 @@ JenkinsRadiator.RadiatorView = Backbone.View.extend({
         _.bindAll(this, 'render');
         this.jobList = this.options.collection;
         this.jobList.bind("change", this.render);
-        this.render();
+        this.lastSoundPlayed = "";
     },
 
     render: function(){
         this.renderHealth();
         this.renderMetrics();
+        this.renderAudio();
+    },
+    renderAudio: function(){
+        if (this.jobList.buildsAreFailing() && this.lastSoundPlayed != "boo") {
+            this.lastSoundPlayed = "boo";
+            $("audio#booing-audio")[0].play();
+        }
+        if (!this.jobList.buildsAreFailing() && this.lastSoundPlayed != "cheer"){
+            this.lastSoundPlayed = "cheer";
+            $("audio#cheering-audio")[0].play();
+        }
     },
     renderMetrics: function(){
         var passingBuildsView  = new JenkinsRadiator.BuildMetricView({"title":"Passing", "count":this.jobList.passingCount()});
@@ -133,14 +144,14 @@ JenkinsRadiator.Router = Backbone.Router.extend({
 
     home:function(){
         var jobList = new JenkinsRadiator.JobsCollection();
+        var radiatorView = new JenkinsRadiator.RadiatorView({"collection":jobList});
         jobList.fetch({success: function(){
-            var radiatorView = new JenkinsRadiator.RadiatorView({"collection":jobList});
+            radiatorView.render();
         }});
         var fetchAndDisplay = function(){
             setTimeout(function(){
-                var jobList = new JenkinsRadiator.JobsCollection();
                 jobList.fetch({success: function(){
-                    var radiatorView = new JenkinsRadiator.RadiatorView({"collection":jobList});
+                    radiatorView.render();
                 }});
                 fetchAndDisplay();
             }, config.refresh_interval);
