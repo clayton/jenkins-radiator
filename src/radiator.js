@@ -13,6 +13,10 @@ JenkinsRadiator.JobsCollection = Backbone.Collection.extend({
       return $.ajax(params);
   },
   parse: function(response) {
+      this.filteredJobsCount = _.filter(response.jobs, function(job){
+          return _.include(config.filtered, job.name);
+      }).length;
+      console.log(this.filteredJobsCount);
       return response.jobs;
   },
   failingBuilds:function(){
@@ -120,8 +124,16 @@ JenkinsRadiator.RadiatorView = Backbone.View.extend({
             });
         }else{
             $('.build-health-wrapper .build-health').addClass("passing");
-            $('.build-health-wrapper .build-health').html('<div class="icon"><i class="icon-heart icon-white"></i></div>')
+            $('.build-health-wrapper .build-health').html('<div class="icon"></div>');
+            this.addPassingIcon();
         };
+    },
+    addPassingIcon: function(){
+        if(this.jobList.filteredJobsCount > 0){
+            $('.build-health-wrapper .build-health .icon').html('<span>Jobs We Ignore: ' + this.jobList.filteredJobsCount + '</span>');
+        }else{
+            $('.build-health-wrapper .build-health .icon').html('<i class="icon-heart icon-white"></i>');
+        }
     }
 });
 

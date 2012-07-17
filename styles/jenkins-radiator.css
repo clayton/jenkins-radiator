@@ -19,9 +19,13 @@ body{
   line-height:600px;
   color:white;
   font-weight:800;
-  font-size:550px;
+  font-size:125px;
   min-height:3000px;
   text-align:center;
+}
+
+.build-height.passing div.icon span{
+  font-size:72px;
 }
 
 .build-metrics-wrapper{

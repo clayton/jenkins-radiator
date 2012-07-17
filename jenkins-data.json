@@ -8,14 +8,18 @@
   "jobs": [{
     "name": "Example Failing Build",
     "url": "http://ci.example.com/job/example-failing-build",
-    "color": "red"
+    "color": "blue"
   }, {
     "name": "Failing Build That's Building",
     "url": "http://ci.example.com/job/failing-build-thats-building",
-    "color": "red_anime"
+    "color": "blue"
   }, {
     "name": "Passing Build",
     "url": "http://ci.example.com/job/passing-build",
     "color": "blue"
+  }, {
+    "name": "Filtered Build",
+    "url": "http://ci.example.com/job/filtered-build",
+    "color": "grey"
   }]
 }

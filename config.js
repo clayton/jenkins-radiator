@@ -3,5 +3,6 @@
 
 var config = {
     ci_json_url:"http://ci.example.com/api/json",
-    refresh_interval: 60000
+    refresh_interval: 60000,
+    filtered: ["Filtered Build"]
 }

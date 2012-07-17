@@ -17,6 +17,7 @@ A small backbone.js application that monitors your Jenkins CI build server and d
 ### Optional Configuration
 
 * Edit `config.js` and set the `refresh_interval` to something other than 1 minute
+* Add job names that should not be counted towards a failing status to the `filtered` array
 
 ### Screenshots
 
