@@ -3,16 +3,15 @@ JenkinsRadiator.Job = Backbone.Model.extend({
 
 JenkinsRadiator.JobsCollection = Backbone.Collection.extend({
   model: JenkinsRadiator.Job,
-  url: 'jenkins-data.json',
-  // sync: function(method, model, options) {
-  //     var params = _.extend({
-  //         type: 'GET',
-  //         dataType: 'jsonp',
-  //         processData: true,
-  //         url: config.ci_json_url + "?jsonp=?"
-  //     }, options);
-  //     return $.ajax(params);
-  // },
+  sync: function(method, model, options) {
+      var params = _.extend({
+          type: 'GET',
+          dataType: 'jsonp',
+          processData: true,
+          url: config.ci_json_url + "?jsonp=?"
+      }, options);
+      return $.ajax(params);
+  },
   parse: function(response) {
       this.filteredJobsCount = _.filter(response.jobs, function(job){
           return _.include(config.filtered, job.name);
