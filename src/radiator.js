@@ -3,25 +3,25 @@ JenkinsRadiator.Job = Backbone.Model.extend({
 
 JenkinsRadiator.JobsCollection = Backbone.Collection.extend({
   model: JenkinsRadiator.Job,
-  sync: function(method, model, options) {
-      var params = _.extend({
-          type: 'GET',
-          dataType: 'jsonp',
-          processData: true,
-          url: config.ci_json_url + "?jsonp=?"
-      }, options);
-      return $.ajax(params);
-  },
+  url: 'jenkins-data.json',
+  // sync: function(method, model, options) {
+  //     var params = _.extend({
+  //         type: 'GET',
+  //         dataType: 'jsonp',
+  //         processData: true,
+  //         url: config.ci_json_url + "?jsonp=?"
+  //     }, options);
+  //     return $.ajax(params);
+  // },
   parse: function(response) {
       this.filteredJobsCount = _.filter(response.jobs, function(job){
           return _.include(config.filtered, job.name);
       }).length;
-      console.log(this.filteredJobsCount);
       return response.jobs;
   },
   failingBuilds:function(){
       var builds = this.filter(function(job){
-         return job.get("color") == "red" || job.get("color") == "red_anime";
+         return (job.get("color") == "red" || job.get("color") == "red_anime") && !_.include(config.filtered, job.get("name"));;
       });
       return builds;
   },
@@ -33,7 +33,7 @@ JenkinsRadiator.JobsCollection = Backbone.Collection.extend({
   },
   failingCount:function(){
       var builds = this.filter(function(job){
-         return job.get("color") == "red" || job.get("color") == "red_anime";
+         return (job.get("color") == "red" || job.get("color") == "red_anime") && !_.include(config.filtered, job.get("name"));;
       });
       return builds.length;
   },
@@ -130,7 +130,7 @@ JenkinsRadiator.RadiatorView = Backbone.View.extend({
     },
     addPassingIcon: function(){
         if(this.jobList.filteredJobsCount > 0){
-            $('.build-health-wrapper .build-health .icon').html('<span>Jobs We Ignore: ' + this.jobList.filteredJobsCount + '</span>');
+            $('.build-health-wrapper .build-health .icon').html('<span>Builds We Ignore: ' + this.jobList.filteredJobsCount + '</span>');
         }else{
             $('.build-health-wrapper .build-health .icon').html('<i class="icon-heart icon-white"></i>');
         }

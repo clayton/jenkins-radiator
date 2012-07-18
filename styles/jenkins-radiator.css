@@ -26,6 +26,7 @@ body{
 
 .build-height.passing div.icon span{
   font-size:72px;
+  color:#333;
 }
 
 .build-metrics-wrapper{

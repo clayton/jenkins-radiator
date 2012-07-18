@@ -20,6 +20,6 @@
   }, {
     "name": "Filtered Build",
     "url": "http://ci.example.com/job/filtered-build",
-    "color": "grey"
+    "color": "red"
   }]
 }
