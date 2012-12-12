@@ -20,7 +20,7 @@ JenkinsRadiator.JobsCollection = Backbone.Collection.extend({
   },
   failingBuilds:function(){
       var builds = this.filter(function(job){
-         return (job.get("color") === "yellow" || job.get("color") === "red" || job.get("color") === "red_anime") && !_.include(config.filtered, job.get("name"));;
+         return (job.get("color") === "yellow_anime" || job.get("color") === "yellow" || job.get("color") === "red" || job.get("color") === "red_anime") && !_.include(config.filtered, job.get("name"));;
       });
       return builds;
   },
@@ -32,13 +32,13 @@ JenkinsRadiator.JobsCollection = Backbone.Collection.extend({
   },
   failingCount:function(){
       var builds = this.filter(function(job){
-         return (job.get("color") === "yellow" || job.get("color") === "red" || job.get("color") === "red_anime") && !_.include(config.filtered, job.get("name"));;
+         return (job.get("color") === "yellow_anime" || job.get("color") === "yellow" || job.get("color") === "red" || job.get("color") === "red_anime") && !_.include(config.filtered, job.get("name"));;
       });
       return builds.length;
   },
   buildingCount:function(){
       var builds = this.filter(function(job){
-         return job.get("color") === "red_anime" || job.get("color") === "blue_anime";
+         return (job.get("color") === "yellow_anime" || job.get("color") === "red_anime" || job.get("color") === "blue_anime");
       });
       return builds.length;
   },

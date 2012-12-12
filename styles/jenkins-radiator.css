@@ -77,7 +77,7 @@ body{
 }
 
 
-.job-view.red_anime{
+.job-view.red_anime, .job-view.yellow_anime{
   background-color: DarkOrchid;
   -webkit-background-size: 30px 30px;
   -moz-background-size: 30px 30px;
