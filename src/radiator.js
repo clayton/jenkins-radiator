@@ -20,31 +20,31 @@ JenkinsRadiator.JobsCollection = Backbone.Collection.extend({
   },
   failingBuilds:function(){
       var builds = this.filter(function(job){
-         return (job.get("color") == "red" || job.get("color") == "red_anime") && !_.include(config.filtered, job.get("name"));;
+         return (job.get("color") === "yellow" || job.get("color") === "red" || job.get("color") === "red_anime") && !_.include(config.filtered, job.get("name"));;
       });
       return builds;
   },
   passingCount:function(){
       var builds = this.filter(function(job){
-         return job.get("color") == "blue" || job.get("color") == "blue_anime";
+         return job.get("color") === "blue" || job.get("color") === "blue_anime";
       });
       return builds.length;
   },
   failingCount:function(){
       var builds = this.filter(function(job){
-         return (job.get("color") == "red" || job.get("color") == "red_anime") && !_.include(config.filtered, job.get("name"));;
+         return (job.get("color") === "yellow" || job.get("color") === "red" || job.get("color") === "red_anime") && !_.include(config.filtered, job.get("name"));;
       });
       return builds.length;
   },
   buildingCount:function(){
       var builds = this.filter(function(job){
-         return job.get("color") == "red_anime" || job.get("color") == "blue_anime";
+         return job.get("color") === "red_anime" || job.get("color") === "blue_anime";
       });
       return builds.length;
   },
   disabledCount:function(){
       var builds = this.filter(function(job){
-         return job.get("color") == "grey";
+         return job.get("color") === "grey";
       });
       return builds.length;
   },
@@ -92,11 +92,11 @@ JenkinsRadiator.RadiatorView = Backbone.View.extend({
         this.renderAudio();
     },
     renderAudio: function(){
-        if (this.jobList.buildsAreFailing() && this.lastSoundPlayed != "boo") {
+        if (this.jobList.buildsAreFailing() && this.lastSoundPlayed !== "boo") {
             this.lastSoundPlayed = "boo";
             $("audio#booing-audio")[0].play();
         }
-        if (!this.jobList.buildsAreFailing() && this.lastSoundPlayed != "cheer"){
+        if (!this.jobList.buildsAreFailing() && this.lastSoundPlayed !== "cheer"){
             this.lastSoundPlayed = "cheer";
             $("audio#cheering-audio")[0].play();
         }
