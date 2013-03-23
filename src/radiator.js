@@ -131,7 +131,7 @@ JenkinsRadiator.RadiatorView = Backbone.View.extend({
         if(this.jobList.filteredJobsCount > 0){
             $('.build-health-wrapper .build-health .icon').html('<span>Builds We Ignore: ' + this.jobList.filteredJobsCount + '</span>');
         }else{
-            $('.build-health-wrapper .build-health .icon').html('<i class="icon-heart icon-white"></i>');
+            $('.build-health-wrapper .build-health .icon').html(config.all_green_html);
         }
     }
 });
