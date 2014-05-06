@@ -1,0 +1,5 @@
+<div class="col-md-12">
+  <div class="job <%= @model.animated %> <%= @model.health %>">
+    <h2><%= @model.name %></h2>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+.job{
+  font-weight:700;
+  color:white;
+  padding:10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+
+.job > h2{
+  margin:0;
+}
+
+.job.failing{
+  background-color:OrangeRed;
+}
+
+.job.passing{
+  background-color:LimeGreen;
+}
+
+.job.unstable{
+  background-color:DarkOrange;
+}
+
+.job.aborted{
+  background-color:black;
+}
+
+.job.not-built{
+  background-color:DodgerBlue;
+}
+
+.job.disabled{
+  background-color:grey;
+}
+
+
+.animated{
+  background-color:RoyalBlue;
+  -webkit-background-size: 30px 30px;
+  -moz-background-size: 30px 30px;
+  background-size: 30px 30px;
+  background-image: -webkit-gradient(linear, left top, right bottom,
+    color-stop(.25, rgba(255, 255, 255, .25)), color-stop(.25, transparent),
+    color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .25)),
+    color-stop(.75, rgba(255, 255, 255, .25)), color-stop(.75, transparent),
+    to(transparent));
+    background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .25) 25%, transparent 25%,
+    transparent 50%, rgba(255, 255, 255, .25) 50%, rgba(255, 255, 255, .25) 75%,
+    transparent 75%, transparent);
+    background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, .25) 25%, transparent 25%,
+    transparent 50%, rgba(255, 255, 255, .25) 50%, rgba(255, 255, 255, .25) 75%,
+    transparent 75%, transparent);
+    background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, .25) 25%, transparent 25%,
+    transparent 50%, rgba(255, 255, 255, .25) 50%, rgba(255, 255, 255, .25) 75%,
+    transparent 75%, transparent);
+    background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, .25) 25%, transparent 25%,
+    transparent 50%, rgba(255, 255, 255, .25) 50%, rgba(255, 255, 255, .25) 75%,
+    transparent 75%, transparent);
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .25) 25%, transparent 25%,
+    transparent 50%, rgba(255, 255, 255, .25) 50%, rgba(255, 255, 255, .25) 75%,
+    transparent 75%, transparent);
+    -webkit-animation: animate-stripes 3s linear infinite;
+    -moz-animation: animate-stripes 3s linear infinite;
+  }
+
+  @-webkit-keyframes animate-stripes {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 60px 0;
+    }
+
+  }
+
+  @-moz-keyframes animate-stripes {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 60px 0;
+    }
+}

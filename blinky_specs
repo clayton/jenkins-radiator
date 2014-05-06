@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# blinky-tape-test-tool f && minijasminenode --verbose lib/specs-run.js && blinky-tape-test-tool sg || blinky-tape-test-tool sr
+
+minijasminenode --verbose lib/specs-run.js

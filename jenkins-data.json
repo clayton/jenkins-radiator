@@ -8,18 +8,38 @@
   "jobs": [{
     "name": "Example Failing Build",
     "url": "http://ci.example.com/job/example-failing-build",
-    "color": "blue"
+    "color": "red"
   }, {
-    "name": "Failing Build That's Building",
+    "name": "Failing Build that's Building",
     "url": "http://ci.example.com/job/failing-build-thats-building",
-    "color": "blue"
+    "color": "red_anime"
+  }, {
+    "name": "Passing Build That's Building",
+    "url": "http://ci.example.com/job/failing-build-thats-building",
+    "color": "blue_anime"
   }, {
     "name": "Passing Build",
     "url": "http://ci.example.com/job/passing-build",
     "color": "blue"
   }, {
-    "name": "Filtered Build",
-    "url": "http://ci.example.com/job/filtered-build",
-    "color": "red"
+    "name": "Unstable Build That's Building",
+    "url": "http://ci.example.com/job/failing-build-thats-building",
+    "color": "yellow_anime"
+  }, {
+    "name": "Unstable Build",
+    "url": "http://ci.example.com/job/passing-build",
+    "color": "yellow"
+  }, {
+    "name": "Aborted Build",
+    "url": "http://ci.example.com/job/aborted-build",
+    "color": "aborted"
+  }, {
+    "name": "Disabled Build",
+    "url": "http://ci.example.com/job/disabled-build",
+    "color": "disabled"
+  }, {
+    "name": "Not Yet Built Build",
+    "url": "http://ci.example.com/job/disabled-build",
+    "color": "grey"
   }]
 }

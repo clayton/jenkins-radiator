@@ -1,0 +1,3 @@
+#!/bin/bash
+
+minijasminenode --noColor lib/specs-run.js

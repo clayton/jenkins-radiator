@@ -1,0 +1,41 @@
+{
+  "name": "jenkins-radiator",
+  "version": "2.0.0",
+  "description": "Jenkins Radiator Dashboard",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.6.1",
+    "gulp-coffee": "^1.4.2",
+    "gulp-concat": "^2.2.0",
+    "gulp-eco": "^0.0.1",
+    "gulp-util": "^2.2.14",
+    "moment": "~2.6.0",
+    "jasmine-reporters": "~0.4.1",
+    "minijasminenode": "~0.4.0"
+  },
+  "devDependencies": {
+    "backbone": "^1.1.2",
+    "gulp": "^3.6.1",
+    "gulp-coffee": "^1.4.2",
+    "gulp-concat": "^2.2.0",
+    "gulp-eco": "git+https://github.com/resellers/gulp-eco.git",
+    "gulp-jasmine": "^0.2.0",
+    "gulp-shell": "^0.2.4",
+    "gulp-util": "^2.2.14",
+    "jasmine-node": "^1.14.3",
+    "jquery": "^2.1.0",
+    "jsdom": "^0.10.5",
+    "underscore": "^1.6.0",
+    "typeahead.js": "~0.10.2"
+  },
+  "scripts": {
+    "start": "gulp",
+    "test": "jasmine-node --coffee spec/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:clayton/jenkins-radiator.git"
+  },
+  "author": "Clayton Lengel-Zigich",
+  "license": "MIT"
+}
